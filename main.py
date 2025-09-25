@@ -13,15 +13,21 @@ class Item(BaseModel):
 
 items = []
 
+# Test
+
 
 @app.get("/")
 def root():
     return {"Hello": "World"}
 
+# Get items
+
 
 @app.get("/items", response_model=List[Item])
 def return_items(limit: int = 10):
     return items[0:limit]
+
+# Get specific item from items
 
 
 @app.get("/items/{item_id}", response_model=Item)
@@ -32,11 +38,15 @@ def get_item(item_id: int) -> Item:
     else:
         raise HTTPException(status_code=404, detail="[404]: Item not found")
 
+# Post a Item into Items
+
 
 @app.post("/items")
 def create_item(item: Item):
     items.append(item)
     return items
+
+# Delete a Item from Items
 
 
 @app.delete("/items")

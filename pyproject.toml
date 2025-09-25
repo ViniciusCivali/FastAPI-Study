@@ -3,7 +3,7 @@ name = "fastapi-study"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Vinícius Civali",email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
